@@ -1,0 +1,42 @@
+# ── Backend (Kotlin / Spring Boot / Gradle) ──────────────────────────────────
+.gradle/
+build/
+out/
+*.class
+*.jar
+*.war
+*.ear
+
+# Gradle wrapper jar (keep wrapper properties, ignore the jar)
+!gradle/wrapper/gradle-wrapper.jar
+
+# Spring Boot
+HELP.md
+.springBeans
+spring-shell.log
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# ── Frontend (React / Vite / Node) ───────────────────────────────────────────
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/.cache/
+
+# ── Environment / Secrets ────────────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+application-local.properties
+**/src/main/resources/application-secret.properties
+
+# ── OS / Editor ──────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/settings.json

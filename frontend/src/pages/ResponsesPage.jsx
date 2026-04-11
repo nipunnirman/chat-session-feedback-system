@@ -31,7 +31,8 @@ export default function ResponsesPage() {
       { method: 'POST' }
     );
     const data = await res.json();
-    setNewLink(data.link);
+    const generatedFeedbackId = data.link.split('/').pop();
+    setNewLink(`${window.location.origin}/feedback/${generatedFeedbackId}`);
     setGenerating(false);
     loadResponses(); // refresh table
   }
@@ -128,7 +129,7 @@ export default function ResponsesPage() {
                     <td className="date-col">{new Date(r.createdAt).toLocaleString()}</td>
                     <td className="date-col">{r.respondedAt ? new Date(r.respondedAt).toLocaleString() : '—'}</td>
                     <td>
-                      <a href={`http://localhost:5174/feedback/${r.feedbackId}`} target="_blank" rel="noreferrer">
+                      <a href={`${window.location.origin}/feedback/${r.feedbackId}`} target="_blank" rel="noreferrer">
                         Open ↗
                       </a>
                     </td>
